@@ -1,8 +1,6 @@
-let selectedTopping: string = 'pepperoni';
-
-function selectTopping(topping: string): void {
-    selectedTopping = topping; // btw this is a "not pure" function, because it uses the variable from outside
+function orderError(error: string): never { // implicit return type would be void
+    throw new Error(error);
+    // never going to return a value!
 }
 
-selectTopping('bacon');
-console.log(selectedTopping);
+orderError('Something went wrong');
