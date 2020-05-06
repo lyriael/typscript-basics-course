@@ -1,25 +1,6 @@
-const pizza = {
-    name: 'Pepperoni',
-    prize: 15,
-    getName() {
-        return this.name;
-    }
-};
-
-console.log(pizza.getName());
-
-const toppings = ['pepperoni'];
-
-const order = {
-    pizza: pizza,
-    toppings: toppings
-};
-
-const orderShort = {pizza, toppings};
-
-function createOrder(pizza: any, toppings: any) {
-    return {pizza, toppings};
+function sumAll(message: string, ...arr: Array<number>) {
+    console.log(message);
+    return arr.reduce(((previousValue, currentValue) => previousValue + currentValue));
 }
 
-console.log('order ', order);
-console.log('orderShort ', orderShort);
+console.log(sumAll('here you go: ', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
