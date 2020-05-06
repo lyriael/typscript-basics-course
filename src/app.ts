@@ -1,6 +1,11 @@
-function orderError(error: string): never { // implicit return type would be void
-    throw new Error(error);
-    // never going to return a value!
+let coupon: string | null = 'pizza25';
+
+function removeCoupon(): void {
+    coupon = null;
 }
 
-orderError('Something went wrong');
+console.log(coupon);
+
+removeCoupon();
+
+console.log(coupon);
