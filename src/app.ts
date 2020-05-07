@@ -1,3 +1,21 @@
+class Sizes {
+    constructor(public sizes: string[]) {
+    }
+
+    set availableSizes(sizes: string[]) { // getter/setter are (obviously always public)
+        this.sizes = sizes;
+    }
+
+    get availableSizes() {
+        return this.sizes;
+    }
+}
+
+const sizes = new Sizes(['small', 'medium']);
+sizes.availableSizes;
+sizes.availableSizes = ['large'];
+
+
 class Pizza {
     toppings: string[] = [];
 
