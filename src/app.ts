@@ -1,5 +1,5 @@
 abstract class Sizes {
-    constructor(public sizes: string[]) {
+    constructor(protected sizes: string[]) {
     }
 
     set availableSizes(sizes: string[]) { // getter/setter are (obviously always public)
@@ -15,9 +15,12 @@ class Pizza extends Sizes {
 
     public toppings: string[] = [];
 
-    constructor(readonly name: string,
-                public sizes: string[]) {
+    constructor(readonly name: string, sizes: string[]) {
         super(sizes);
+    }
+
+    public updateSizes(sizes: string[]) {
+        this.sizes = sizes;
     }
 
     addTopping(topping: string) {
@@ -28,4 +31,3 @@ class Pizza extends Sizes {
 const pizza = new Pizza('Pepperoni', ['small', 'medium']);
 
 pizza.addTopping('pepperoni');
-console.log(pizza.availableSizes);
